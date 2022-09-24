@@ -1,0 +1,15 @@
+Задание №2
+
+При открытии программы помощи "man" нам доступно 2 действия: выход с помощью "q" и помощь с "h".
+Воспользуйтесь этой помощью и узнайте как обращаться с программой man.
+В результате, напишите команды, с помощью которых можно выполнять эти действия:
+
+Go to first line in file:  g  <  ESC-<
+Go to last line in file:  G  >  ESC->
+Forward one window:  f  ^F  ^V  SPACE
+Forward one line: e  ^E  j  ^N  CR
+Backward one line:  y  ^Y  k  ^K  ^P
+Search forward for matching line: /pattern
+Search backward for matching line: ?pattern
+Repeat previous search: n
+Repeat previous search in reverse direction: N
