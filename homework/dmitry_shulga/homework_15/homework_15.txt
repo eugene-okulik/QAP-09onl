@@ -1,0 +1,24 @@
+Задание №2
+
+Go to first line in file: - "g", "<", "ESC-<"
+Go to last line in file: - "G", ">", "ESC->"
+Forward one window: - "z"
+Forward one line: - "e", "^E", "j", "^N", "CR"
+Backward one line: - "y", "^Y", "k", "^K", "^P"
+Search forward for matching line: - "/pattern"
+Search backward for matching line: - "?pattern"
+Repeat previous search: - "n"
+Repeat previous search in reverse direction: - "N"
+
+Задание №3
+
+/dev/null - "c"
+/dev/zero - "c"
+/dev/sda - "Не был найден - cannot stat '/dev/sda': No such file or directory, но это блочное устройство потому тип "b"
+/dev/tty - "c"
+/root - "d"
+/etc/passwd - "-"
+/proc/mounts - "l"
+/bin/ls - "-"
+/bin/zcat - "-"
+
