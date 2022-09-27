@@ -1,0 +1,25 @@
+# Task_2. При открытии программы помощи "man" нам доступно 2 действия: выход с помощью "q" и помощь с "h".
+# Воспользуйтесь этой помощью и узнайте как обращаться с программой man. В результате, напишите команды, с
+# помощью которых можно выполнять эти действия:
+
+# Go to first line in file (or line N): g  <  ESC-<
+
+# Go to last line in file (or line N): G  >  ESC->
+
+# Forward one window (or N lines): f  ^F  ^V  SPACE
+
+# Forward one window (and set window to N): z
+
+# Forward one window, but do not stop at the end-of-file: ESC-SPACE
+
+# Forward one line (or N lines): e  ^E  j  ^N  CR
+
+# Backward one line (or N lines): y  ^Y  k  ^K  ^P
+
+# Search forward for (N-th) matching line: /pattern
+
+# Search backward for (N-th) matching line: ?pattern
+
+# Repeat previous search (for N-th occurrence): n
+
+# Repeat previous search in reverse direction: N
