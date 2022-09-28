@@ -1,0 +1,26 @@
+Task 2:
+
+JUMPING:
+1. Go to first line in file: g, <, ESC-<
+2. Go to last line in file : G, >, ESC->
+MOVING:
+1. Forward one window: f, ^F, ^V, SPACE
+2. Forward one line: e, ^E, j, ^N, CR
+3. Backward one line: y, ^Y, k, ^K, ^p
+SEARCHING:
+1. Search forward for matching line: /pattern
+2. Search backward  for matching line: ?pattern
+3. Repeat previous search: n
+4. Rapeat previous search in reverse direction: N
+
+Task 3:
+
+/dev/null: crw-rw-rw- 
+/dev/zero: crw-rw-rw-
+/dev/sda(на серве как я понял не sda, а vda, поэтому вот): brw-rw---- 
+/dev/tty: crw-rw-rw-
+/root: drwx------
+/etc/passwd: -rw-r--r--
+/proc/mounts: 1rwxrwxrwx
+/bin/ls: -rwxr-xr-x
+/bin/zcat: -rwxr-xr-x
