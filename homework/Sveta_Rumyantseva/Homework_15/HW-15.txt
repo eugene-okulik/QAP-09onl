@@ -1,0 +1,48 @@
+Task2:
+Go to first line in file:  less <path/file_name>
+g or < or ESC-<
+
+Go to last line in file:  less <path/file_name>
+G or > or ESC->
+
+Forward one window:  less <path/file_name>
+SPACE or Ctrl+V or f or Ctrl+F 
+
+Forward one line:  less <path/file_name>
+Enter or Return or e or Ctrl+E or Ctrl+N  or j or Ctrl+J
+
+Backward one line:  less <path/file_name>
+y or Ctrl+Y or Ctrl+P or k or Ctrl+K
+
+Search forward for matching line: less <path/file_name>
+/pattern
+
+Search backward for matching line:  less <path/file_name>
+?pattern
+
+Repeat previous search:  less <path/file_name>
+n
+
+Repeat previous search in reverse direction:  less <path/file_name>
+N
+
+
+
+Task3:
+/dev/null   Файл символьного устройства  c-character special file
+
+/dev/zero   Файл символьного устройства   c-character special file
+
+/dev/sda    Файл блочного устройства   b-block special file
+
+/dev/tty    Файл символьного устройства  c-character special file
+
+/root      d-directory-директория, которая содержит файлы и личные настройки суперпользователя;
+
+/etc/passwd   обычный тип файла regular file   
+
+/proc/mounts  Файл символьных ссылок l-symbolic link file 
+
+/bin/ls     обычный тип файла  regular file 
+
+/bin/zcat   обычный тип файла  regular file 
