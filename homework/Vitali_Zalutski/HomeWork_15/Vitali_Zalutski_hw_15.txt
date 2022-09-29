@@ -15,12 +15,12 @@ SEARCHING:
 
 Task 3:
 
-/dev/null: crw-rw-rw- 
-/dev/zero: crw-rw-rw-
-/dev/sda(на серве как я понял не sda, а vda, поэтому вот): brw-rw---- 
-/dev/tty: crw-rw-rw-
-/root: drwx------
-/etc/passwd: -rw-r--r--
-/proc/mounts: 1rwxrwxrwx
-/bin/ls: -rwxr-xr-x
-/bin/zcat: -rwxr-xr-x
+/dev/null: crw-rw-rw- (символьные файлы) 
+/dev/zero: crw-rw-rw- (символьные файлы)
+/dev/sda(на серве как я понял не sda, а vda, поэтому вот): brw-rw---- (блочные файлы)
+/dev/tty: crw-rw-rw- (символьные файлы
+/root: drwx------ (директории)
+/etc/passwd: -rw-r--r-- (regular file)
+/proc/mounts: 1rwxrwxrwx (файлы символьных ссылок)
+/bin/ls: -rwxr-xr-x (regular file)
+/bin/zcat: -rwxr-xr-x (regular file)
