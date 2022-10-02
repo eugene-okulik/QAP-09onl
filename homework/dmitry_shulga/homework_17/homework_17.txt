@@ -1,0 +1,16 @@
+Задание №1
+
+history | grep "-"
+
+
+Задание №2
+
+find /var/log -name "*.log"
+
+
+Задание №3
+
+chmod g+xr /home/Shulga_Dmitry
+
+
+
