@@ -1,0 +1,69 @@
+Задание №1
+Напишите команду, которая, используя history и grep, получает из истории все команды, в которых встречается символ "-"
+a.dudin@qap:~/homework_16-Andrei_Dudin$ history | grep ["-"]
+   13  ls -a
+   22  ls -l
+   25  ls -l
+   26  mkdir -p test1/test2
+   27  ls -l
+   28  ls -l test1/
+   30  ls -l
+   34  cp -r test1 TMS/
+   35  ls -l TMS/
+   36  ls -l TMS/test1/
+   39  man --help
+   41  ды -д
+   42  ls -l
+   43  ls -l /dev/null
+   45  ls -l
+   48  ls -l
+   49  tar -xvf homework_16.tar
+   51  ls -l
+   53  mkdir homework_16-Andrei_Dudin
+   54  cd homework_16-Andrei_Dudin
+   56  ls -l
+   59  ls -l /root
+   60  sudo ls -l /root
+   61  sudo ls -l /root >  cat README.txt
+   68  sudo ls -l /root > results.txt
+   69  ls -l
+   72  ls -l
+   75  ls -l
+   77  tar --totals -cvf homework_16-andrei_dudin.tar hello.txt notes.txt results.txt
+   78  ls -l
+   79  cp homework_16-andrei_dudin.tar /home/homework/
+   80  ls -l /home/homework/
+   83  history | grep ["-"]
+
+**********************************
+Задание №2
+Напишите команду, которая ищет все файлы, заканчивающиеся на ".log" в папке /var/log
+find /var/log -name "*.log"
+
+********************************
+Задание №3
+Напишите команду, которая меняет права доступа к вашей личной папке (/home/username) таким образом,
+чтобы все участники группы qap09 могли без sudo получить содержимое этой папки и могли перейти в эту папку,
+но не могли вносить в нее изменения. Т.е. для группы должны появиться права на чтение и на выполнение папки,
+но право на запись (изменение) должно отсутствовать.
+
+a.dudin@qap:/home$ chmod 750 a.dudin
+a.dudin@qap:/home$ ls -l
+total 68
+drwx------  7 AmelchenkoDima    qap09 4096 Sep 26 18:07 AmelchenkoDima
+drwx------  4 Btalataj          qap09 4096 Sep 22 18:09 Btalataj
+drwx------  5 Malashko17        qap09 4096 Sep 26 18:31 Malashko17
+drwx------  4 Rumyantseva_Sveta qap09 4096 Sep 22 19:05 Rumyantseva_Sveta
+drwxr-x---  5 Shulga_Dmitry     qap09 4096 Sep 27 08:17 Shulga_Dmitry
+drwx------  8 V.Zalutski        qap09 4096 Sep 29 17:41 V.Zalutski
+drwx------  7 Valery1995        qap09 4096 Oct  2 19:34 Valery1995
+drwxr-x---  8 a.dudin           qap09 4096 Oct  2 19:14 a.dudin
+drwx------  8 a.voschilo        qap09 4096 Sep 29 18:16 a.voschilo
+drwxr-xr-x 15 e                 root  4096 Oct  2 11:34 e
+drwx------  8 evgenlav          qap09 4096 Sep 28 14:23 evgenlav
+drwx------  4 feredero          qap09 4096 Sep 26 16:32 feredero
+drwxrwxrwx  2 root              root  4096 Oct  2 19:55 homework
+drwx------  4 i                 qap09 4096 Sep 22 19:14 i
+drwx------  8 marybilaya        qap09 4096 Oct  1 18:39 marybilaya
+drwx------  6 metalveor         qap09 4096 Sep 27 13:16 metalveor
+drwx------  7 t.shev            qap09 4096 Sep 28 14:05 t.she
