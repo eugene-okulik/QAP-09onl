@@ -1,0 +1,21 @@
+
+g  <  ESC-< 
+G  >  ESC-> 
+f  ^F  ^V  SPACE 
+e  ^E  j  ^N  CR 
+y  ^Y  k  ^K  ^P 
+/pattern 
+?pattern 
+ESC-n 
+ESC-N 
+
+
+/dev/null - символьное устройство
+/dev/zero - символьное устройство
+/dev/sda - блочное устройство
+/dev/tty - символьное устройство
+/root - каталог
+/etc/passwd - обычный файл
+/proc/mounts - символьная ссылка
+/bin/ls - обычный файл
+/bin/zcat - обычный файл
