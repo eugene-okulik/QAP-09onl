@@ -1,0 +1,13 @@
+task_1
+history | grep "-"
+
+task_2
+
+find /var/log/*.log
+
+
+task_3
+
+chmod 750 V.Zalutski
+
+
