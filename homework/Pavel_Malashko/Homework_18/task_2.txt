@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Введите слово для проверки (нажмите "." для выхода)"
+read input
+while [ "$input" != "." ]  
+do
+if [ ${#input} -lt 5 ]
+then
+    echo "Ok"
+else
+    echo "Слово слишком длинное"
+fi
+read input
+done
