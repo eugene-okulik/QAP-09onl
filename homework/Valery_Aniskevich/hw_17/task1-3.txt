@@ -1,0 +1,8 @@
+Задание №1
+history | grep "-"
+
+Задание №2
+find /var/log/*.log
+
+Задание №3
+sudo chmod 750 /home/Valery1995
