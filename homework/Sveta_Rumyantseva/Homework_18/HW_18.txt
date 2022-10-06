@@ -1,0 +1,51 @@
+Homework18
+Задание №1
+Напишите скрипт который будет спрашивать “Хотите установить Python?” и варианты ответа “1) Да 2) Нет”
+Если Да, то выдать сообщение “Вы выбрали установить python”
+Если Нет, то выдать сообщение “Все-равно установим”
+
+Файл task1_hw18.sh содержит следующий код:
+#!/bin/bash
+
+echo -n "Do you want to install the Python?(Y/N): "
+read answer
+if [[ "${answer^^}" == "Y" ]]
+then
+echo "You have chose the Python install."
+elif [[ "${answer^^}" == "N" ]]
+then
+echo "We’ll install the Python anyway."
+else
+echo "Your answer is wrong. You had to choose an answer: Y or N."
+fi
+
+
+Задание №2
+Напишите скрипт, который будет запрашивать слова на вход и затем если слово не длиннее 5 символов, то отвечает “ok”,
+а если длиннее, то отвечает “слово слишком длинное”.
+Реализуйте этот сценарий так, что бы он продолжал запрашивать слова и заканчивался, если передать ему “.” (точку)
+Подсказка: используйте while
+
+Файл task2_hw18.sh содержит следующий код:
+#!/bin/bash
+
+echo -n "Enter any word: "
+read word
+while [ "${word}" != . ]
+do
+length=${#word}
+if [[ -z "${word}" ]]
+then
+echo "The string is empty."
+elif [[ "${length}" -le 5 ]]
+then
+echo "Ok"
+else
+echo "The ${word} is too long."
+fi 
+echo -n "Enter any word: " 
+read word
+done
+echo "The end."
+
+
