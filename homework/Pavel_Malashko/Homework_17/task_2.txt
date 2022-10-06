@@ -1,0 +1,17 @@
+Команда, отображающая все файлы с расширением ".log" в директории /var/log: sudo find /var/log -name "*.log"
+Пример: 
+/var/log/kern.log
+/var/log/apt/term.log
+/var/log/apt/history.log
+/var/log/landscape/sysinfo.log
+/var/log/alternatives.log
+/var/log/cloud-init.log
+/var/log/droplet-agent.update.log
+/var/log/cloud-init-output.log
+/var/log/fontconfig.log
+/var/log/dpkg.log
+/var/log/auth.log
+/var/log/ubuntu-advantage-timer.log
+/var/log/unattended-upgrades/unattended-upgrades-dpkg.log
+/var/log/unattended-upgrades/unattended-upgrades-shutdown.log
+/var/log/unattended-upgrades/unattended-upgrades.log
