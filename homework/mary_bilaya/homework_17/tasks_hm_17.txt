@@ -1,0 +1,38 @@
+# Task 1. Напишите команду, которая, используя history и grep, получает из истории все команды,
+# в которых встречается символ "-"
+
+history | grep "-"
+
+# Task 2. Напишите команду, которая ищет все файлы, заканчивающиеся на ".log" в папке /var/log
+
+find /var/log/ -name "*.log" -type f
+
+# /var/log/kern.log
+# /var/log/apt/term.log
+# /var/log/apt/history.log
+# /var/log/landscape/sysinfo.log
+# /var/log/alternatives.log
+# /var/log/cloud-init.log
+# /var/log/droplet-agent.update.log
+# /var/log/cloud-init-output.log
+# /var/log/fontconfig.log
+# find: ‘/var/log/private’: Permission denied
+# /var/log/dpkg.log
+# /var/log/auth.log
+# /var/log/ubuntu-advantage-timer.log
+# find: ‘/var/log/unattended-upgrades’: Permission denied
+
+# Task 3. Напишите команду, которая меняет права доступа к вашей личной папке (/home/username) таким образом,
+# чтобы все участники группы qap09 могли без sudo получить содержимое этой папки и могли перейти в эту папку,
+# но не могли вносить в нее изменения. Т.е. для группы должны появиться права на чтение и на выполнение папки,
+# но право на запись (изменение) должно отсутствовать.
+
+ls -l /home
+
+# drwx------  8 marybilaya        qap09 4096 Oct  1 18:39 marybilaya
+
+chmod 750 /home/marybilaya
+
+ls -l /home
+
+# drwxr-x---  8 marybilaya        qap09 4096 Oct  1 18:39 marybilaya
