@@ -19,20 +19,20 @@ done
 
 #! /bin/bash
 
-again=-
-while [ "$again" == "-" ]
+DISTR=-
+while [ "$DISTR" != "." ]
 
 do
 printf 'Введите слово:'
 read DISTR
 
-if [ "${#DISTR}" -le "5" ]
+if [[ "${#DISTR}" -le "5" && "$DISTR" != "." ]]
 then
 echo "Ok"
-else
+elif [[ "${#DISTR}" -gt "5" ]]
+then
 echo "Слово слишком длинное"
 fi
 
-printf "Если хотите продолжить '-', завершить нажмите '.':"
-read again
 done
+echo "Bye"
