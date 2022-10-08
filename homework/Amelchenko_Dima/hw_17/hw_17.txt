@@ -1,0 +1,12 @@
+Задание №1
+
+history | grep _
+
+Задание №2
+
+find /var/log -name "*.log"
+
+Задание №3
+
+chmod 750 /home/AmelchenkoDima
+
