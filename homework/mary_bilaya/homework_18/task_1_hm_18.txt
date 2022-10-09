@@ -1,0 +1,42 @@
+# Task 1. Напишите скрипт который будет спрашивать “Хотите установить Python?” и варианты ответа “1) Да 2) Нет”
+# Если Да, то выдать сообщение “Вы выбрали установить python”
+# Если Нет, то выдать сообщение “Все-равно установим”
+
+
+# Option_1
+
+#! /bin/bash
+# PS3="Would you like to install the Python? "
+# echo
+# select install in "Yes" "No"
+# do
+# if [[ $install == "Yes" ]]
+# then
+# echo "You made a choice to install the Python"
+# else
+# echo "Never mind. We are installing the programm anyway. Ha-ha-ha!!!"
+# fi
+# break
+# done
+# exit 0
+
+
+# Option_2
+
+#! /bin/bash
+# echo "Would you like to install the Python? "
+# echo "Enter 1 or 2 (1/yes, 2/no)"
+# read choice
+# case $choice in
+#           1)
+#           echo "You made a choice to install the Python"
+#           ;;
+#           2)
+#           echo "You refused but we are installing the programm anyway! Ha-ha-ha"
+#           ;;
+#           *)
+#           echo "You made an incorrect choice. Try again"
+#           ;;
+# esac
+# exit 0
+
