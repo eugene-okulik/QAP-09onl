@@ -1,0 +1,38 @@
+Задание №1
+
+#! /bin/bash
+
+PS3='Хотите установить Python?'
+echo
+select answ in 'Да' 'Нет'
+do
+if [[ $answ == 'Да' ]]
+then
+echo "Вы выбрали установить Python"
+else
+echo "Все-равно установим"
+fi
+break
+done
+
+Задание №2
+
+#! /bin/bash
+
+DISTR=-
+while [ "$DISTR" != "." ]
+
+do
+printf 'Введите слово:'
+read DISTR
+
+if [[ "${#DISTR}" -le "5" && "$DISTR" != "." ]]
+then
+echo "Ok"
+elif [[ "${#DISTR}" -gt "5" ]]
+then
+echo "Слово слишком длинное"
+fi
+
+done
+echo "Bye"
