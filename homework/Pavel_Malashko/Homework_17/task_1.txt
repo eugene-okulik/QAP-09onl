@@ -1,0 +1,25 @@
+Команда, с помощью  которой можно получить все команды, в которых встречается символ "-": history | grep "-"
+Пример: 
+    8  ls -a
+   11  mkdir -p test/int_dir
+   41  ls -l /dev/null
+   42  ls -l /dev/zero
+   43  ls -l /dev/sda
+   44  ls -l /dev/tty
+   45  ls -l /root
+   46  sudo ls -l /root
+   47  ls -l /etc/passwd
+   48  ls -l /proc/mounts
+   49  ls -l /bin/ls
+   50  ls -l /bin/zcat
+   65  tar -x homework_16.tar
+   75  ls -l > results.txt
+   80  sudo ls -l /root > results.txt
+  100  tar -cf homework_16-pavel_malashko hello.txt results.txt notes.txt
+  102  tar -cf homework_16-pavel_malashko.tar hello.txt results.txt notes.txt
+  104  remove homework_16-pavel_malashko
+  105  rm homework_16-pavel_malashko
+  107  cp homework_16-pavel_malashko.tar /home/homework/
+  112  vim homework_16-pavel_malashko.tar
+  114  history | grep '-'
+  115  history | grep "-"

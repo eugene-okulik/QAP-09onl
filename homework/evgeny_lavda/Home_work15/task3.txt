@@ -1,0 +1,9 @@
+/dev/null - обычный файл
+/dev/zero - обычный файл
+/dev/sda - нет файла
+/dev/tty  - обычный файл
+/root - каталог
+/etc/passwd - обычный файл
+/proc/mounts - ccылка
+/bin/ls - обычный файл
+/bin/zcat - обычный файл
