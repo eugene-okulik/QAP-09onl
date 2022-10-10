@@ -1,0 +1,12 @@
+#! /bin/bash
+
+echo "Хотите установить Python?
+1) Да
+2) Нет"
+read ANSWER
+if [[ "$ANSWER" == "1" ]]
+then
+echo "Вы выбрали установить Python"
+else
+echo "Все-равно установим"
+fi

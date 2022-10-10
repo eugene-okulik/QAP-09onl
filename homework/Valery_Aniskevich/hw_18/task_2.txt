@@ -1,0 +1,15 @@
+#! /bin/bash
+
+echo "Введите слово"
+read WORD
+while [[ $WORD != "." ]]
+do
+if [[ ${#WORD} -le 5 ]]
+then
+echo "ok"
+else
+echo "слово слишком длинное"
+fi
+read WORD
+done
+echo "Bye-Bye"
