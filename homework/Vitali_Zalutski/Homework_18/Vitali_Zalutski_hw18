@@ -1,0 +1,31 @@
+#! /bin/bash
+
+printf'Хотите ли вы установить Python?: '
+read DISTR
+case $DISTR in
+yes)
+  echo "Вы выбрали установить Python!"
+  ;;
+no)
+  echo "Все равно установим!"
+esac
+
+
+#task2
+
+#! /bin/bash
+
+echo "Enter a '.' to stop"
+while [ "$AGAIN" != "." ]
+do
+printf "Enter a word: "
+read AGAIN
+if [ "${AGAIN}" -le "5" ]
+then
+echo "OK"
+esle
+echo "Word id too long"
+fi
+done
+exit 0
+
