@@ -1,0 +1,39 @@
+Задание №1
+
+echo "Хотите установить Python ?"
+PS3='Ваш выбор: '
+echo
+select choise in 'Да' 'Нет'
+do
+if [[ -z "$choise" ]]
+then
+echo "Выбор неизбежен"
+else if [[ $choise == 'Да' ]]
+then
+echo "Вы выбрали установить Python"
+else
+echo "Все-равно установим"
+fi
+fi
+break
+done
+
+Задание №2
+
+#!/bin/bash
+
+
+while [[ "$word" != "." ]]
+do
+printf "Введите слово: "
+read word
+
+if [[ "${#word}" -le "5" ]]
+then
+echo "ok"
+elif [[ "${#word}" -gt "5" ]]
+then
+echo "Слово слишком длинное"
+fi
+done
+
