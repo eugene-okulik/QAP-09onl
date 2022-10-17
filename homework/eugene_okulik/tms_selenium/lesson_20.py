@@ -14,7 +14,7 @@ def open_chrome():
     # options.add_argument('window-size=2048,1080')
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
-    sleep(3)
+    # sleep(3)
     return driver
 
 
@@ -78,7 +78,27 @@ def check_select(driver):
     sleep(3)
 
 
+def get_cookies(driver):
+    driver.get('https://demoblaze.com/')
+    print(driver.get_cookies())
+    driver.add_cookie({'name': 'test1', 'value': 'test_value', 'httpOnly': True})
+    print(driver.get_cookies())
+
+
+def tabs(driver):
+    sleep(5)
+    driver.get('https://the-internet.herokuapp.com/windows')
+    link = driver.find_element(By.LINK_TEXT, 'Click Here')
+    link.click()
+    print('old tab: ', driver.find_element(By.TAG_NAME, 'h3').text)
+    driver.switch_to.window(driver.window_handles[1])
+    print('new tab: ', driver.find_element(By.TAG_NAME, 'h3').text)
+    driver.close()
+    driver.switch_to.window(driver.window_handles[0])
+    print('old tab2: ', driver.find_element(By.TAG_NAME, 'h3').text)
+
+
 
 driver = open_chrome()
-check_select(driver)
+tabs(driver)
 driver.quit()
