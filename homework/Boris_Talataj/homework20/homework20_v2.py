@@ -1,23 +1,29 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 #from time import sleep
 
+options = Options()
+options.add_argument("start-maximized")
+chrome_driver = webdriver.Chrome(options=options)
 
-service = Service(executable_path='C:\\Users\\chromedriver_win32\\chromedriver.exe')
-crome_driver = webdriver.Chrome(service=service)
-
-crome_driver.get('http://automationpractice.com/')
-contact_us = crome_driver.find_element(By.ID, 'contact-link')
+chrome_driver.get('http://automationpractice.com/')
+contact_us = chrome_driver.find_element(By.ID, 'contact-link')
 contact_us.click()
 
-email_address = crome_driver.find_element(By.ID, 'email')
+email_address = chrome_driver.find_element(By.ID, 'email')
 email_address.send_keys('btalataj@gmail.com')
-email_address.send_keys(Keys.ENTER)
 
-order_reference = crome_driver.find_element(By.ID, 'id_order')
+subject_heading = chrome_driver.find_element(By.XPATH, "//option[contains(text(),'Webmaster')]")
+subject_heading.click()
+
+message = chrome_driver.find_element(By.ID, 'message')
+message.send_keys('Платье просто песня. Беру.')
+
+order_reference = chrome_driver.find_element(By.ID, 'id_order')
 order_reference.send_keys('http://automationpractice.com/index.php?id_product=6&controller=product')
 
-send = crome_driver.find_element(By.ID, 'submitMessage')
+send = chrome_driver.find_element(By.ID, 'submitMessage')
 send.click()
+
