@@ -12,7 +12,6 @@ def test_1(driver):
     driver.get('https://www.demoblaze.com/index.html')
     product = driver.find_element(By.CSS_SELECTOR, 'a[href="prod.html?idp_=2"]')
     ActionChains(driver).key_down(Keys.CONTROL).click(product).key_up(Keys.CONTROL).perform()
-    sleep(5)
     tabs = driver.window_handles
     driver.switch_to.window(tabs[1])
     my_product = driver.find_element(By.TAG_NAME, 'h2').text
