@@ -16,20 +16,27 @@ from datetime import datetime
 @pytest.fixture(scope='session')    # this fixture will launch before all tests and end after all tests
 # @pytest.fixture(scope='function')    # this fixture will launch before each test and end after each test
 def fixture_practise():
-    print('The beginning of the test')
-    yield
-    print('End of the test')
+    print('\nThe beginning of the testing')
+    yield None
+    print('\nEnd of the testing')
+
+
+@pytest.fixture(scope='function')
+def all_tests():
+    print('\nHi! The test begins')
+    yield None
+    print('\nBye! The test is over')
 
 
 @pytest.mark.simple
-def test_one(fixture_practise):
+def test_one(fixture_practise, all_tests):
     print('Testing the first function')
     assert 5 == 5
 
 
 @pytest.mark.skipif(datetime.now().year == 2022, reason='not supported in this year')
 @pytest.mark.simple
-def test_two(fixture_practise):
+def test_two(fixture_practise, all_tests):
     print('Testing the second function')
     assert 10 / 2 == 5
 
@@ -39,50 +46,50 @@ def test_two(fixture_practise):
     [6, 12, 20, 46]
 )
 @pytest.mark.simple
-def test_three(fixture_practise, value):
+def test_three(fixture_practise, value, all_tests):
     print('Testing the third function')
     assert 4 % 2 == 0
 
 
 @pytest.mark.hard
-def test_four(fixture_practise):
+def test_four(fixture_practise, all_tests):
     print('Testing the fourth function')
     assert (1 + 1) ** (5 - 2) == 8
 
 
 @pytest.mark.simple
-def test_five(fixture_practise):
+def test_five(fixture_practise, all_tests):
     print('Testing the fifth function')
     assert 5 ** 2 == 25
 
 
 @pytest.mark.simple
-def test_six(fixture_practise):
+def test_six(fixture_practise, all_tests):
     print('Testing the sixth function')
     assert 9 // 2 == 4
 
 
 @pytest.mark.simple
-def test_seven(fixture_practise):
+def test_seven(fixture_practise, all_tests):
     print('Testing the seventh function')
     assert 1 == 1
 
 
 @pytest.mark.simple
-def test_eight(fixture_practise):
+def test_eight(fixture_practise, all_tests):
     print('Testing the eighth function')
     assert 10 - 3 == 7
 
 
 @pytest.mark.hard
-def test_nine(fixture_practise):
+def test_nine(fixture_practise, all_tests):
     print('Testing the ninth function')
     assert 2 + 2 * 2 == 6
 
 
 @pytest.mark.skip('the feature has not been supported on the project yet')
 @pytest.mark.simple
-def test_ten(fixture_practise):
+def test_ten(fixture_practise, all_tests):
     print('Testing the tenth function')
     assert 2 != 3
 
