@@ -39,12 +39,12 @@ def test_number_4(test):
     assert 4 == 4
 
 
-TEST_PARAMETRIZE = [5, 7, 6]
+TEST_DATA = [2, 3, 4]
 
 
 @pytest.mark.parametrize(
     'num',
-    TEST_PARAMETRIZE
+    TEST_DATA
 )
 @pytest.mark.simple
 def test_number_5(test, num):
