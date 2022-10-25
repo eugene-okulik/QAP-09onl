@@ -15,7 +15,7 @@ def driver():
     return driver_chrome
 
 
-def cart_task1(driver):
+def task1(driver):
     driver.get('https://www.demoblaze.com/index.html')
 
     samsung_galaxy_s6 = driver.find_element(By.CSS_SELECTOR, 'a[href="prod.html?idp_=1"]')
@@ -41,8 +41,42 @@ def cart_task1(driver):
     driver.implicitly_wait(10)
     assert check_cart.text == 'Samsung galaxy s6'
     print('Device "Samsung galaxy s6" added to cart')
+    driver.quit()
+
+
+def task2(driver):
+    driver.get('https://demoqa.com/menu#')
+
+    main_item_2 = driver.find_element(By.XPATH, '//*[@id="nav"]/li[2]/a')
+    main_item_2.click()
+
+    sub_sub_list = driver.find_element(By.XPATH, '//*[@id="nav"]//li[3]/a')
+    sub_sub_list.click()
+
+    sud_sub_item_2 = driver.find_element(By.XPATH, '//*[@id="nav"]/li[2]/ul/li[3]/ul/li[2]/a')
+    sud_sub_item_2.click()
+
+    driver.quit()
+
+
+def task3(driver):
+    driver.get('https://testpages.herokuapp.com/styled/alerts/alert-test.html')
+
+    text = 'Funny ducks'
+
+    show_prompt_box = driver.find_element(By.ID, 'promptexample')
+    show_prompt_box.click()
+
+    Alert(driver).send_keys(text)
+    Alert(driver).accept()
+
+    check_text = driver.find_element(By.ID, 'promptreturn').text
+
+    assert check_text == text
 
 
 driver = driver()
-cart_task1(driver)
+task1(driver)
+task2(driver)
+task3(driver)
 driver.quit()
