@@ -1,25 +1,25 @@
 from pages.base_page import BasePage
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-your_location_field = (By.ID, 'addressInput')
-search_button = (By.NAME, 'search_locations')
-alert = (By.CLASS_NAME, 'fancybox-inner')
+from selenium.webdriver.support.select import Select
+from time import sleep
+from pages.locators import our_stores_locators as osl
 
 
 class OurStore(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def enter_your_location(self, location):
-        self.find_element(your_location_field).send_keys(location)
-        self.find_element(search_button).click()
-        # wait = WebDriverWait(self.driver, 20)
-        # wait.until(EC.text_to_be_present_in_element(your_location_field, location),
-        #            message='text is not presented in element')
+    def enter_your_location_data(self, location):
+        self.find_element(osl.your_location_field).send_keys(location)
+        sleep(3)    # for demonstration purposes
 
-    def check_that_alert_is_displayed(self, location):
-        alert_message = self.find_element(alert)
-        return f'{location} Not found' in alert_message.text
+    def select_radius(self, radius):
+        select = Select(self.find_element(osl.radius_field))
+        select.select_by_value(radius)
+
+    def click_search_button(self):
+        self.find_element(osl.search_button).click()
+
+    def check_that_alert_message_is_displayed(self, location):
+        alert_message_text = self.find_element(osl.alert).text
+        return f'{location} Not found' in alert_message_text
 

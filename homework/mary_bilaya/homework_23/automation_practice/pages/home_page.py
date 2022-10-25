@@ -14,3 +14,6 @@ class HomePage(BasePage):
 
     def click_footer_our_stores(self):
         self.find_element(hpl.footer_our_stories_link).click()
+
+    def click_footer_about_us(self):
+        self.find_element(hpl.footer_about_us_link).click()
