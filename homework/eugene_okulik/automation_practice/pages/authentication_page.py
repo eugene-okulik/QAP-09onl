@@ -23,3 +23,12 @@ class AuthenticationPage(BasePage):
         self.find_element(apl.email_field).send_keys(email)
         self.find_element(apl.password_field).send_keys(passwd)
         self.find_element(apl.submit_button).click()
+
+    def is_displayed_email_field(self):
+        return self.find_element(apl.email_field).is_displayed()
+
+    def is_displayed_passwd_field(self):
+        return self.find_element(apl.password_field).is_displayed()
+
+    def click_email_field(self):
+        self.find_element(apl.email_field).click()
