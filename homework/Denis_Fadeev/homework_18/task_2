@@ -1,0 +1,16 @@
+#! /bin/bash
+
+echo "Write word"
+echo "Write "." to exit"
+read WORD
+while [[ $WORD != "." ]]
+do
+if [[ ${#WORD} -le 5 ]]
+then
+echo "good word"
+else
+echo "long word"
+fi
+read WORD
+done
+exit 0

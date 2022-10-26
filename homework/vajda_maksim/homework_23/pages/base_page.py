@@ -1,4 +1,5 @@
-from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.chrome.webdriver import WebDriver  # for select annotation
+from selenium.webdriver.support.ui import Select
 
 
 class BasePage:
@@ -17,5 +18,8 @@ class BasePage:
     def scroll_page_to_bottom(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-    def scroll_page_to_middle(self):
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
+    def select_by_visible_text(self, args: tuple, visible_text):
+        by_name, by_val = args
+        Select(self.driver.find_element(by_name, by_val)).select_by_visible_text(visible_text)
+
+
