@@ -4,17 +4,22 @@ from selenium.webdriver.common.by import By
 # the_first_rule = (By.NAME, 'Top quality products')
 # the_second_rule = (By.NAME, 'Best customer service')
 # the_third_rule = (By.NAME, '30-days money back guarantee')
-block_of_rules = (By.CLASS_NAME, 'list-1')
+list_of_rules = (By.CLASS_NAME, 'list-1')
 rules = (By.TAG_NAME, 'li')
+image = (By.CSS_SELECTOR, 'img[title="cms-img"]')
+testimonials_text = (By.CLASS_NAME, 'testimonials')
 
 
 class AboutUs(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def the_rules_is_displayed(self):
-        all_block_rules = self.find_element(block_of_rules)
-        # all_rules = all_block_rules.find_elements(rules)
+    def our_team_image_is_displayed(self):
+        return self.find_element(image).is_displayed()
+
+    def testimonials_text_is_displayed(self):
+        return self.find_element(testimonials_text).is_displayed()
+
 
 
 

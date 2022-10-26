@@ -7,4 +7,5 @@ def test_about_us_page(driver):
     home_page.open_home_page()
     home_page.click_footer_about_us()
     about_us_page = AboutUs(driver)
-    about_us_page.the_rules_is_displayed()
+    assert about_us_page.our_team_image_is_displayed()
+    assert about_us_page.testimonials_text_is_displayed()

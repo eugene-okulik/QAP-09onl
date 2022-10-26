@@ -1,7 +1,6 @@
 import pytest
 from pages.home_page import HomePage
 from pages.best_sellers_page import SellersPage
-from time import sleep
 
 CREDENTIALS = ['Price: Lowest first', 'Price: Highest first',
                'Product Name: A to Z', 'Product Name: Z to A', 'In stock',

@@ -16,6 +16,7 @@ def test_our_stores(driver, radius):
     our_store_page.enter_your_location_data(location='Hollywood')
     our_store_page.select_radius(radius=radius)
     our_store_page.click_search_button()
+    sleep(3)    # for demonstration purposes
     assert our_store_page.check_that_alert_message_is_displayed(location='Hollywood')
 
 
