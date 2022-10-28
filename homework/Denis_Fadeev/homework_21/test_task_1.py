@@ -1,5 +1,7 @@
 import pytest
 
+TEST_DATA = [2, 3, 4]
+
 
 @pytest.fixture(scope='session')
 def tests():
@@ -39,9 +41,6 @@ def test_number_4(test):
     assert 4 == 4
 
 
-TEST_DATA = [2, 3, 4]
-
-
 @pytest.mark.parametrize(
     'num',
     TEST_DATA
@@ -49,7 +48,7 @@ TEST_DATA = [2, 3, 4]
 @pytest.mark.simple
 def test_number_5(test, num):
     print(f'==|Test_5|')
-    assert 5 == 5
+    assert 3 == 3
 
 
 @pytest.mark.hard
@@ -76,7 +75,7 @@ def test_number_9(test):
     assert 9 == 9
 
 
-@pytest.mark.skip
+@pytest.mark.skip('Unnecessary test')
 def test_number_10(test):
     print(f'==|Test_10|')
     assert 10 == 10
