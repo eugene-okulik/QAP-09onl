@@ -14,7 +14,7 @@ def test_laptops_page(driver):
     sleep(3)  # for demonstration purposes
     assert laptops_page.check_alert_message()
     laptops_page.accept_alert_message()
-    laptops_page.go_to_cart_page()
+    laptops_page.go_to_home_page()
     sleep(3)  # for demonstration purposes
 
 
