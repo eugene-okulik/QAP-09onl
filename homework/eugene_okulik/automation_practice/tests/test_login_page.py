@@ -6,6 +6,8 @@ from pages.authentication_page import AuthenticationPage
 
 from time import sleep
 
+import settings
+
 
 CREDENTIALS = [
     {'login': 'my@mail.com', 'passwd': 'sskdjhskdjfh'},
@@ -17,7 +19,7 @@ CREDENTIALS = [
 @allure.feature('Authentication')
 @allure.story('registration')
 @pytest.mark.parametrize('creds', CREDENTIALS)
-def test_login_failed(driver, creds):
+def test_login_failed(driver, creds, test_data):
     home_page = HomePage(driver)
     with allure.step('Open Home page'):
         home_page.open_page()
@@ -30,11 +32,22 @@ def test_login_failed(driver, creds):
         assert auth_page.check_that_alert_displayed()
 
 
+def test_login_passed(driver, creds):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_sign_in_button()
+    auth_page = AuthenticationPage(driver)
+    auth_page.enter_login_details(email=settings.login, passwd=settings.password)
+    assert auth_page.check_that_alert_displayed()
+
+
 def test_scroll(driver):
     page = HomePage(driver)
-    # page.open_page()
+    page.open_page()
     # page.scroll_page_to_bottom()
     # sleep(3)
+    page.sign_in_button.click()
+    sleep(5)
     page.open_page()
     page.scroll_page_to_middle()
     sleep(3)
