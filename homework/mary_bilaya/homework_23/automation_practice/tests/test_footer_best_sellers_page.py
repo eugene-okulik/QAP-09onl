@@ -1,20 +1,19 @@
-import pytest
 from pages.home_page import HomePage
 from pages.best_sellers_page import SellersPage
-
-CREDENTIALS = ['Price: Lowest first', 'Price: Highest first',
-               'Product Name: A to Z', 'Product Name: Z to A', 'In stock',
-               'Reference: Lowest first', 'Reference: Highest first']
+from time import sleep
 
 
-@pytest.mark.parametrize('select_choice', CREDENTIALS)
-def test_best_sellers(driver, select_choice):
+def test_best_sellers(driver):
     home_page = HomePage(driver)
     home_page.open_home_page()
     home_page.click_footer_best_sellers()
     best_sellers = SellersPage(driver)
-    # sleep(3)    # for demonstration purposes
-    best_sellers.select_sort_by_field(select_choice=select_choice)
+    sleep(3)    # for demonstration purposes
+    best_sellers.select_sort_by_field()
+    best_sellers.click_list_display_link()
+    best_sellers.click_add_to_compare()
+    assert best_sellers.check_that_button_compare_is_worked()
+    sleep(3)    # for demonstration purposes
 
 
 

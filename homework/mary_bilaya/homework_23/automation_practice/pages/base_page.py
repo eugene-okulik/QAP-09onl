@@ -1,5 +1,4 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.support.select import Select
 
 
 class BasePage:
@@ -15,12 +14,8 @@ class BasePage:
         by_name, by_val = args
         return self.driver.find_elements(by_name, by_val)
 
-    # def find_inner_element(self, args: tuple):
-    #     self.find_element()
-    #     by_name, by_val = args
-    #     outer_element = self.driver.find_element(by_name, by_val)
-    #     return outer_element.find_elements(by_name, by_val)
-    #     se
+
+
 
 
 
