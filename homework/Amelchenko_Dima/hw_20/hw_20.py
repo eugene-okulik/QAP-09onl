@@ -11,6 +11,7 @@ def driver():
     driver_chrome.implicitly_wait(10)
     return driver_chrome
 
+
 def test_contact_us(driver_chrome):
     driver_chrome.get('http://automationpractice.com/index.php')
 
