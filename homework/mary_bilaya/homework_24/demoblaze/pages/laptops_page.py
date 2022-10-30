@@ -4,7 +4,7 @@ from selenium.webdriver.common.alert import Alert
 
 mac_book_air = (By.CLASS_NAME, 'hrefch')
 add_to_cart_air = (By.CSS_SELECTOR, 'a[onclick="addToCart(11)"]')
-home_link = (By.CLASS_NAME, 'nav-link')
+cart_link = (By.ID, 'cartur')
 
 
 class Laptops(BasePage):
@@ -26,8 +26,11 @@ class Laptops(BasePage):
     def accept_alert_message(self):
         Alert(self.driver).accept()
 
-    def go_to_home_page(self):
-        all_links = self.find_elements(home_link)
-        home = all_links[0].click()
-        self.scroll_to_the_bottom_of_page()
+    def go_to_cart_page(self):
+        self.find_element(cart_link).click()
+
+
+
+
+
 
