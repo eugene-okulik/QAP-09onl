@@ -20,7 +20,7 @@ class UseInfo:
             len(self.children)) + \
             " children: " + ', '.join(self.children) + ". He owns "
         a = list(self.has.items())
-        for i in range(3):
+        for i in range(len(self.has)):
             s += ' '.join(a[i]) + ', '
         print(s[:-2])
 
