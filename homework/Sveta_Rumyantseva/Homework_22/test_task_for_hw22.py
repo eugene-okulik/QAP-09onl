@@ -14,9 +14,9 @@ def test_order_item(driver):
     all_tabs = driver.window_handles
     driver.switch_to.window(all_tabs[1])  # switch to the new tab with an item
     add_button = driver.find_element(By.XPATH, '//a[@onclick="addToCart(2)" and @href="#"]')
-    sleep(2)  # demonstration
+
     ActionChains(driver).click(add_button).perform()  # or  add_button.click()
-    sleep(2)  # demonstration
+    sleep(2)
     Alert(driver).accept()
     driver.close()  # close the current tab: all_tabs[1]
 
