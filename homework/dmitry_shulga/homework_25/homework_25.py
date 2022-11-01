@@ -1,4 +1,5 @@
 import json
+import os
 
 
 class Represent:
@@ -27,10 +28,12 @@ class Represent:
               f"{', '.join(self.children)}. The property has {', '.join(my_own)}")
 
 
-data_1 = Represent("user1.json")
-data_1.formatted_text()
-data_2 = Represent("user2.json")
-data_2.formatted_text()
-data_3 = Represent("user3.json")
-data_3.formatted_text()
+# data_1 = Represent("user1.json")
+# data_1.formatted_text()
+# data_2 = Represent("user2.json")
+# data_2.formatted_text()
+# data_3 = Represent("user3.json")
+# data_3.formatted_text()
 
+for file in [filename for filename in os.listdir() if filename.endswith('.json')]:
+    Represent(file).formatted_text()
