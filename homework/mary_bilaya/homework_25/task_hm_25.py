@@ -24,16 +24,9 @@ class PersonalData:
         return f'He has {len(self.children)} children. Their names are {", ".join(self.children)}.'
 
     def has_info(self):
-        owns = list(self.has.items())
-
-
-
-
-
-
-
-
-
+        print('He owns: ', end="")
+        for key, value in self.has.items():
+            print(f'{key} {value}', end=", ")
 
 
 user_1 = PersonalData('user1.json')
@@ -41,4 +34,16 @@ print(user_1.name_info())
 print(user_1.city_info())
 print(user_1.children_info())
 print(user_1.has_info())
+print('\n')
+user_2 = PersonalData('user2.json')
+print(user_2.name_info())
+print(user_2.city_info())
+print(user_2.children_info())
+print(user_2.has_info())
+print('\n')
+user_3 = PersonalData('user3.json')
+print(user_3.name_info())
+print(user_3.city_info())
+print(user_3.children_info())
+print(user_3.has_info())
 
