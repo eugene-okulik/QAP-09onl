@@ -9,6 +9,10 @@ class HomePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    @property
+    def sign_in_button(self):
+        return self.find_element(sign_in_button)
+
     def open_page(self):
         self.driver.get(self.base_url)
 

@@ -1,4 +1,6 @@
 import pytest
+import json
+import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -12,3 +14,9 @@ def driver():
     # sleep(3)
     yield chrome_driver
     chrome_driver.quit()
+
+
+@pytest.fixture(scope="function")
+def test_data():
+    with open('test_data.txt', 'r') as data_file:
+        return json.load(data_file)
