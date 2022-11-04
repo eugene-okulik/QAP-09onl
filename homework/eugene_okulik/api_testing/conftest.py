@@ -29,3 +29,4 @@ def create_a_post(base_url):
         data=data
     ).json()
     yield response['id']
+    requests.request('DELETE', f'{base_url}/posts/{response["id"]}')

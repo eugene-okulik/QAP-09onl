@@ -12,11 +12,13 @@ idna==3.4
 iniconfig==1.1.1
 Mako==1.2.3
 MarkupSafe==2.1.1
+mysql-connector-python==8.0.31
 outcome==1.2.0
 packaging==21.3
 parse==1.19.0
 parse-type==0.6.0
 pluggy==1.0.0
+protobuf==3.20.1
 py==1.11.0
 pyparsing==3.0.9
 PySocks==1.7.1
