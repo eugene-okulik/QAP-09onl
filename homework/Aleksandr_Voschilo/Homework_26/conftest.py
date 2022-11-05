@@ -40,3 +40,25 @@ def login(base_url):
             ).json()
             token_file = open('token.txt', 'w')
             token_file.write(response_login['token'])
+
+
+@pytest.fixture(scope='function')
+def create_a_post(base_url, token):
+    headers = {
+        'Authorization': token,
+        'Content-Type': 'application/json'
+    }
+    data_json = {
+        "text": "what are they cooking",
+        "url": "https://memes.com/m/double-tap-to-edit-0mRw6-m0VR3",
+        "tags": ["cooking", "cats", "chicken"],
+        "info": {"colors": ["orange", "white", "red"], "objects": ["picture", "text"]}
+    }
+    data = json.dumps(data_json)
+    response = requests.request(
+        'POST',
+        f'{base_url}/meme',
+        headers=headers,
+        data=data).json()
+    yield response['id']
+    requests.request('DELETE', f'{base_url}/posts/{response["id"]}')
