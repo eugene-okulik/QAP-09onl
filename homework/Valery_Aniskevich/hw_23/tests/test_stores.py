@@ -1,6 +1,9 @@
 from pages.stores_page import OurStores
+import allure
 
 
+@allure.feature('information section')
+@allure.story('stores')
 def test_stores(driver):
     stores = OurStores(driver)
     stores.open_page()

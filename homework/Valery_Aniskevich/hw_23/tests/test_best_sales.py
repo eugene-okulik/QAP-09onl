@@ -1,8 +1,11 @@
 from time import sleep
 import pytest
 from pages.best_sales_page import BestSalesPage
+import allure
 
 
+@allure.feature('information section')
+@allure.story('best_sales')
 def test_button_enabled(driver):
     best_sales = BestSalesPage(driver)
     best_sales.open_page()
