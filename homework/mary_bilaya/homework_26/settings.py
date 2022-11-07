@@ -1,7 +1,7 @@
 import json
 import requests
 
-token = 'UyQvxDZYhiJ6fHv'
+token = 's5Vn2QsIZbOzREo'
 
 
 def test_check_token(base_url):
