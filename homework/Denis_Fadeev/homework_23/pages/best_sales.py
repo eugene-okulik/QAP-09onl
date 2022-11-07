@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 go_to_best_sales = (By.CSS_SELECTOR, 'a[title="Best sellers"]')
-clothes_by_in_stock = (By.ID, 'selectProductSoft', 'In stock')
+clothes_by_in_stock = (By.ID, 'selectProductSoft')
 in_stock = (By.CLASS_NAME, "In stock")
 more_cloth = (By.XPATH, '//*[@id="center_column"]/ul/li[1]/div/div[2]/div[2]/a[2]/span')
 check_price = (By.XPATH, '//*[@id="our_price_display"]')
