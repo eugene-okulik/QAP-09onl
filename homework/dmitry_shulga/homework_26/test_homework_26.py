@@ -2,40 +2,10 @@ import requests
 import json
 
 
-def test_get_token(base_url):
-    with open("token.txt", "r") as file:
-        old_token = file.read()
-    response = requests.request('GET', f'{base_url}/authorize/{old_token}').text
-    if response == "Token is alive. Username is Dmitry_Shulga":
-        act_token = old_token
-        print(act_token)
-    else:
-        headers = {
-            'Content-Type': 'application/json'
-        }
-        data_json = {
-            "name": "Dmitry_Shulga"
-        }
-        data = json.dumps(data_json)
-        response = requests.request(
-            'POST',
-            f'{base_url}/authorize',
-            headers=headers,
-            data=data
-        ).json()
-        new_token = response['token']
-        with open("token.txt", "w") as new_file:
-            new_file.write(new_token)
-        act_token = response['token']
-        print(act_token)
-
-
-def test_get_all_posts(base_url):
-    with open("token.txt", "r") as file:
-        token = file.read()
+def test_get_all_posts(base_url, get_token):
     headers = {
                  'Content-Type': 'application/json',
-                 'Authorization': token
+                 'Authorization': get_token
              }
     response = requests.request('GET', f'{base_url}/meme', headers=headers).json()
     for key in response['data']:
@@ -46,23 +16,19 @@ def test_get_all_posts(base_url):
                         assert tag == 'fun'
 
 
-def test_one_post(base_url):
-    with open("token.txt", "r") as file:
-        token = file.read()
+def test_one_post(base_url, get_token):
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': token
+        'Authorization': get_token
     }
     response = requests.request('GET', f'{base_url}/meme/1', headers=headers).json()
     assert response['id'] == 1
 
 
-def test_create_post(base_url):
-    with open("token.txt", "r") as file:
-        token = file.read()
+def test_create_post(base_url, get_token):
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': token
+        'Authorization': get_token
     }
     data_json = {
         "text": "Dog",
@@ -82,12 +48,10 @@ def test_create_post(base_url):
     requests.request('DELETE', f'{base_url}/meme/{create_id}', headers=headers)
 
 
-def test_update_post(base_url, create_a_post):
-    with open("token.txt", "r") as file:
-        token = file.read()
+def test_update_post(base_url, create_a_post, get_token):
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': token
+        'Authorization': get_token
     }
     put_id = create_a_post
     data_json = {
@@ -108,12 +72,10 @@ def test_update_post(base_url, create_a_post):
     requests.request('DELETE', f'{base_url}/meme/{put_id}', headers=headers)
 
 
-def test_delete_post(base_url, create_a_post):
-    with open("token.txt", "r") as file:
-        token = file.read()
+def test_delete_post(base_url, create_a_post, get_token):
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': token
+        'Authorization': get_token
     }
     post_id = create_a_post
     requests.request('DELETE', f'{base_url}/meme/{post_id}', headers=headers)
