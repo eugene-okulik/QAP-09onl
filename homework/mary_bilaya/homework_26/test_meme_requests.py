@@ -14,7 +14,6 @@ def test_create_a_meme(base_url):
     }
     data = json.dumps(data_json)
     response = requests.request('POST', f'{base_url}/meme', headers=headers, data=data).json()
-    print(response['id'])
     assert response['text'] == 'Are you sure about that???'
 
 
