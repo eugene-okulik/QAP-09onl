@@ -81,3 +81,4 @@ def test_delete_post(base_url, create_a_post, get_token):
     requests.request('DELETE', f'{base_url}/meme/{post_id}', headers=headers)
     response = requests.request('GET', f'{base_url}/meme/{post_id}', headers=headers)
     assert response.status_code == 404, 'Deleted post is not deleted'
+

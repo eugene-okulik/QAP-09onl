@@ -59,3 +59,4 @@ def create_a_post(base_url, get_token):
         data=data
     ).json()
     yield response['id']
+
