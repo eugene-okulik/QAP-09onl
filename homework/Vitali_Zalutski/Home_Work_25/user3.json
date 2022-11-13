@@ -1,0 +1,1 @@
+{"name":  "Xavier", "city": "Paris", "children":  ["Julien", "Amelie", "Annette", "Valerie"], "has": {"car": "Citroen", "computer": "HP", "phone": "Iphone", "watch": "Rolex"}}
