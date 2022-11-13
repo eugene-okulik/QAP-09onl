@@ -1,0 +1,3 @@
+Before test
+==|Test_1_TEXT|
+After test
