@@ -76,7 +76,10 @@ def test_get_all_meme(base_url, user_authorization):
         f'{base_url}/meme',
         headers=headers
     ).json()
+    
+    flag = False
     for memes in response['data']:
-        for tag in memes['tags']:
-            if tag == 'fun':
-                assert tag == 'fun', 'meme with "fun" tag is not found'
+        if 'dad' in memes['tags']:
+            flag = True
+
+    assert flag, "meme with tag fun is not found"
