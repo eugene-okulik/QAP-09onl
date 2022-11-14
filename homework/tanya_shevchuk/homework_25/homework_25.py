@@ -8,15 +8,15 @@ import os
 class PersonFile:
     def __init__(self, user_name):
         self.file = user_name
-        self.data = self.open_file
-        self.name = self.data["name"]
-        self.city = self.data["city"]
-        self.children = self.data["children"]
+        self.data = self.open_file()
+        self.name = self.data['name']
+        self.city = self.data['city']
+        self.children = self.data['children']
         self.has = self.data['has']
 
     def open_file(self):
-        with open(self.file, 'r') as user_file:
-            return json.load(user_file)
+        with open(self.file, 'r') as data_file:
+            return json.load(data_file)
 
     def user_info(self):
         list_info = [' '.join((key, value)) for key, value in self.has.items()]
