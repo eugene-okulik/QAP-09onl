@@ -17,11 +17,11 @@ class UserInformation:
     def input_information_users(self):
         print(f'User name is {self.name}, he lives in {self.city}. '
               f'He has {len(self.children)} children: {", ".join(self.children)}. '
-              f'He owns: ')
-        for key, value in self.has.items():
-            print(', '.join([f'{key}-{value}']), end='')
+              f"He owns: {', '.join([f'{k} {v}' for k, v in self.has.items()])}.")
 
 
+
+print('\n')
 user_1 = UserInformation('user1.json')
 user_1.input_information_users()
 print('\n')
@@ -30,4 +30,4 @@ user_2.input_information_users()
 print('\n')
 user_3 = UserInformation('user3.json')
 user_3.input_information_users()
-print('\n')
+
