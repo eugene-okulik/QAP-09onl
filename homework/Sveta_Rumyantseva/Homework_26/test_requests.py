@@ -5,12 +5,12 @@ import requests
 def test_existing_meme(base_url, check_token):
     headers = {'Authorization': check_token}
     response = requests.request('GET', f"{base_url}/meme", headers=headers).json()
+    counter = 0
     for my_dict in response['data']:
         for key in my_dict.keys():
             if key == 'tags':
-                for val in my_dict['tags']:
-                    if val == 'fun':
-                        assert val == 'fun'
+                counter += my_dict['tags'].count('fun')
+    assert counter > 0, "There is not a meme with word 'fun' in dictionary 'tags'"
 
 
 def test_get_one_meme(base_url, check_token):
