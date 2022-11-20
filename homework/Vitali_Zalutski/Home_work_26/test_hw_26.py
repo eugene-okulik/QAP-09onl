@@ -69,3 +69,6 @@ def test_get_all(token):
                 for name in v:
                     if name == 'fun':
                         assert name == 'fun'
+
+
+#a
