@@ -90,6 +90,7 @@ def test_delete_meme_check_status_code_404(create_meme, get_token):
 
 
 def test_get_all_post(get_token):
+    all_tags = []
     headers = {
         "Authorization": get_token
     }
@@ -98,5 +99,6 @@ def test_get_all_post(get_token):
         for k, v in element.items():
             if k == 'tags':
                 for name in v:
-                    if name == 'fun':
-                        assert name == 'fun'
+                    all_tags+= v
+    all_tags_set = set(all_tags)
+    assert 'fun' in all_tags_set
