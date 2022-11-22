@@ -24,8 +24,8 @@ def test_create_meme(base_url, user_authorization):
     assert response['url'] == "https://hr-portal.ru/files/styles/large/public/mini/120332410_1489612924581086_7825869147172094934_n.jpg?itok=4KomK-7F"
 
 
-def test_update_meme(base_url, user_authorization, test_create_meme):
-    meme_id =test_create_meme
+def test_update_meme(base_url, user_authorization, create_meme):
+    meme_id = create_meme
     headers = {
         "Authorization": f'{user_authorization}',
         'Content-Type': 'application/json'
@@ -47,8 +47,8 @@ def test_update_meme(base_url, user_authorization, test_create_meme):
     assert response['text'] == "В ТЗ всё написано, делайте, что просят..."
 
 
-def test_delete_mem(base_url, user_authorization, test_create_meme):
-    meme_id = test_create_meme
+def test_delete_mem(base_url, user_authorization, create_meme):
+    meme_id = create_meme
     headers = {
         "Authorization": f'{user_authorization}',
         'Content-Type': 'application/json'
@@ -64,3 +64,20 @@ def test_delete_mem(base_url, user_authorization, test_create_meme):
         headers=headers
     )
     assert response.status_code == 404, "Deleted meme is not exist"
+    
+    
+ def test_get_all_posts(base_url, user_authorization):
+    headers = {
+        "Authorization": f'{user_authorization}'
+    }
+    response = requests.request(
+        'GET',
+        f'{base_url}/meme',
+        headers=headers
+    ).json()
+    list_of_tags = []
+    for meme in range(len(response['data'])):
+        tags = (response['data'][meme])
+        for i in tags['tags']:
+            list_of_tags.append(i)
+    assert 'fun' in list_of_tags
