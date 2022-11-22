@@ -29,7 +29,7 @@ def user_authorization(base_url):
 
 
 @pytest.fixture(scope="function")
-def test_create_meme(base_url, user_authorization):
+def create_meme(base_url, user_authorization):
     headers = {
         "Authorization": f'{user_authorization}',
         'Content-Type': 'application/json'
