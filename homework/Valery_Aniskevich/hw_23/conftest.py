@@ -1,23 +1,17 @@
-import pytest
-import json
-import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.wait import WebDriverWait
+import pytest
+from time import sleep
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def driver():
+    print(f"\n{'-' * 45}Start testing{'-' * 45}")
     options = Options()
-    options.add_argument('--headless')
     options.add_argument('start-maximized')
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.implicitly_wait(10)
-    # sleep(3)
     yield chrome_driver
+    print(f"\n{'-' * 45}Finish testing{'-' * 45}")
     chrome_driver.quit()
-
-
-@pytest.fixture(scope="function")
-def test_data():
-    with open('test_data.txt', 'r') as data_file:
-        return json.load(data_file)
