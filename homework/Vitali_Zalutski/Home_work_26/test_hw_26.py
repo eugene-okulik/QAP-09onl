@@ -62,13 +62,12 @@ def test_get_all(token):
     headers = {
         "Authorization": token
     }
-    response = requests.request('GET', f'{BASE_URL}/meme', headers=headers).json()['data']
-    for element in response:
-        for k, v in element.items():
-            if k == 'tags':
-                for name in v:
-                    if name == 'fun':
-                        assert name == 'fun'
+    response = requests.request('GET', f'{BASE_URL}/meme', headers=headers).json()
+    tags_list = []
+    for memes in range(len(response['data'])):
+        tags = (response['data'][memes])
+        for i in tags['tags']:
+            tags_list.append(i)
+    assert 'fun' in tags_list
 
 
-#a
