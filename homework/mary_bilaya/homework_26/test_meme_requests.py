@@ -45,13 +45,13 @@ def test_delete_a_meme(base_url, create_a_new_meme, actual_token):
 def test_get_all_memes(base_url, actual_token):
     headers = {'Authorization': actual_token}
     response = requests.request('GET', f'{base_url}/meme', headers=headers).json()
-    print(response)
+    tags_list = []
     for key in response['data']:
         for k, v in key.items():
             if k == 'tags':
                 for text in v:
-                    if 'fun' in text:
-                        assert text == 'fun'
+                    tags_list += v
+                    assert 'fun' in tags_list
 
 
 
