@@ -50,8 +50,9 @@ def test_get_all_memes(base_url, actual_token):
         for k, v in key.items():
             if k == 'tags':
                 for text in v:
-                    tags_list += v
-                    assert 'fun' in tags_list
+                    tags_list.append(text)
+    overall_tags_list = set(tags_list)
+    assert 'fun' in overall_tags_list
 
 
 
